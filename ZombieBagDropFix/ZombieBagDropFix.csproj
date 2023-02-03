@@ -61,7 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Chunk_Patches.cs" />
+    <Compile Include="ConsoleCmdBagDropFix.cs" />
+    <Compile Include="ModApi.cs" />
+    <Compile Include="ModLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
