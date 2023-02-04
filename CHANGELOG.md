@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2023-02-03
 
+- add bug report
 - add debug admin command option
 - add readme
 - remove dead zombie stubs before chunk load
