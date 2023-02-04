@@ -9,7 +9,6 @@ Since The Fun Pimps have far more experience with their own codebase and in the 
 - [Bug Report for Unexpected Triggering of Zombie Bag Drop Flow](#bug-report-for-unexpected-triggering-of-zombie-bag-drop-flow)
   - [How to Trigger the Bug](#how-to-trigger-the-bug)
   - [Thoughts for The Fun Pimps on How This Might Be Resolved in Source](#thoughts-for-the-fun-pimps-on-how-this-might-be-resolved-in-source)
-  - [Possible Solution](#possible-solution)
     - [`EntityAlive` (with new field, method, and conditional check added)](#entityalive-with-new-field-method-and-conditional-check-added)
     - [`EntityCreationData.ApplyToEntity` (with new setter call and embedded conditional added)](#entitycreationdataapplytoentity-with-new-setter-call-and-embedded-conditional-added)
 
@@ -24,8 +23,6 @@ This can happen in any of the following scenarios so long as a dead zombie is pr
 - [Zombie Bag Drop Bug Demonstration (YouTube, unlisted)](https://youtu.be/dP-1otDCcPE)
 
 ## Thoughts for The Fun Pimps on How This Might Be Resolved in Source
-
-## Possible Solution
 
 Unlike the `zombie-bag-drop-fix` modlet I created, I'd assume you want to continue supporting the reload of dead zombie as 7DTD currently does. With this in mind, here is a suggested solution for doing so with (hopefull) the smallest, simplest solution possible... But I wouldn't be surprised if The Fun Pimps can come up with an ever better solution.
 
