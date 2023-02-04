@@ -27,7 +27,7 @@ This can happen in any of the following scenarios so long as a dead zombie is pr
 Unlike the `zombie-bag-drop-fix` modlet I created, I'd assume you want to continue supporting the reload of dead zombie as 7DTD currently does. With this in mind, here is a suggested solution for doing so with (hopefully) the smallest, simplest solution possible... But I wouldn't be surprised if The Fun Pimps can come up with an ever better solution.
 
 1. I suspect that adding a new boolean field to `EntityAlive` (perhaps named `wasAlreadyKilled`) may help... and this be transient; temporary and without the need to save to any file.
-2. This field could be left alone throughout the typical code flow, but when the entity is created from an entity recreated from EntityCreationData, a check against `EntityCreationData.deathTime` could be performed.
+2. This field could be left alone throughout the typical code flow, but when the entity is recreated in `EntityCreationData`, a check against `EntityCreationData.deathTime` could be performed.
     - Context: *I believe `deathTime > 0` is taken to mean that the entity this entity-stub is referencing has already been killed. Therefore, any loot bag drop attempt anticipated by the player would've already been performed in the past.*
 3. And finally, the `EntityAlive.dropItemOnDeath` method could be updated to check against the new `EntityAlive.wasAlreadyKilled` field. If `EntityAlive.wasAlreadyKilled` is true, the code could opt to skip over the loot bag drop calls.
 
