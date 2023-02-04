@@ -6,17 +6,21 @@
 
 - [Zombie Bag Drop Fix](#zombie-bag-drop-fix)
   - [Summary](#summary)
-    - [What This Mod Does](#what-this-mod-does)
-    - [Compatibility](#compatibility)
-    - [Admin Commands](#admin-commands)
-    - [Is it... Tested?](#is-it-tested)
-    - [Technical Details (How the Mod Works)](#technical-details-how-the-mod-works)
+  - [What This Mod Does](#what-this-mod-does)
+  - [Compatibility](#compatibility)
+  - [Admin Commands](#admin-commands)
+  - [Is it... Tested?](#is-it-tested)
+  - [Technical Details (How the Mod Works)](#technical-details-how-the-mod-works)
 
 ## Summary
 
 7 Days to Die modlet: Fixes a vanilla bug causing zombie bag drops to be attempted on chunk reload for cached, dead zombies... by no longer re-loading dead entities on chunk load.
 
-### What This Mod Does
+- 🎮 A demonstration of this bug can be found here: [Zombie Bag Drop Bug Demonstration (YouTube)](https://youtu.be/dP-1otDCcPE).
+- 📝 A separate bug report has been provided to the developers of 7 Days to Die.
+- ⏳ So until it's resolved in the native game code, this mod can be installed to prevent this bug from being exploited.
+
+## What This Mod Does
 
 This mod permanently removes all dead zombie "entity stubs" from a chunk during its reload process.
 
@@ -29,7 +33,7 @@ This adjustment accomplishes 2 goals:
 1. [Bug Avoidance] *Avoids* the workflow which leads to a dead entity 'stub' (like a zombie) being reconstructed as an active entity object, which (if a zombie) leads to the zombie bag drop chance being unintentionally attempted once again.
 2. [Slight Performance Improvement (more of a side-effect)] Lower active entity count for an entity that is not functionally meaningful (dead zombie/animal that has been abandoned) only serves to drain client and server resources without benefit.
 
-### Compatibility
+## Compatibility
 
 Environment | Compatible | Details
 --- | --- | ---
@@ -37,7 +41,7 @@ Dedicated Server | Yes | only the server needs this mod (EAC can be **Enabled** 
 Peer-to-Peer Hosting | Yes | only the host needs this mod (EAC must be **Disabled** on host)
 Local Single Player | Yes | EAC must be **Disabled**
 
-### Admin Commands
+## Admin Commands
 
 > ℹ️ You can always search for this command or any command by running:
 >
@@ -54,7 +58,7 @@ This command will result in producing the following something like the following
 
 *Note that leaving debug mode off does **very slightly** improve performance.*
 
-### Is it... Tested?
+## Is it... Tested?
 
 Yes, of course! 😆 This was a major concern for me as well. Last thing I'd want is to make it so dead zombies only show up for the player who killed them, for example.
 
@@ -65,7 +69,7 @@ Multiple players are online and one player kills a zombie | the other player is 
 Multiple players are online and one player kills a zombie and does not leave area. Other player from outside of area approaches | dead zombie renders in for second player and ragdoll effect plays for that player, but bag drop attempt is not triggered | same happens with mod installed, as expected
 One player is online and kills a zombie, then second player logs in and visits area first player is in | dead zombie renders in for second player and ragdoll effect plays for that player, but bag drop attempt is not triggered | same happens with mod installed, as expected
 
-### Technical Details (How the Mod Works)
+## Technical Details (How the Mod Works)
 
 A Harmony prefix jumps in front of calls to `Chunk.Load` to run a pre-scan on the Entity Stubs stored within the Chunk's data. Any stubs for entities with a recorded death time are then removed before the Chunk.Load process begins.
 
