@@ -55,18 +55,20 @@ One player is online and kills a zombie, then second player logs in and visits a
 
 ## Admin Commands
 
-primary | alternate
-:---: | :---:
-bagdropfix | bdf
-
-params | description
-:---: | ---
-N/A | enable/disable debug logging for this mod
-
 > ℹ️ You can always search for this command or any command by running:
 >
 > - `help * <partial or complete command name>`
 > - or get details about this (or any) command and its options by running `help <command>`
+
+primary | alternate | params | description
+:---: | :---: | :---: | ---
+bagdropfix | bdf | N/A | enable/disable debug logging for this mod (disabled by default)
+
+This command will result in producing the following something like the following log entry (visible in server logs, active telnet connections, or from the local admin console if running locally):
+
+> 2023-02-02T19:44:23 380.457 INF [ZombieBagDropFix.Patches.Chunk_OnLoad_Patches] DEBUG: Removing dead entity stub before Chunk.OnLoad for entity zombieMarlene_4416 to improve performance and prevent additional bag drop attempts bug.
+
+*Note that leaving debug mode off does **very slightly** improve performance.*
 
 ## Compatibility
 
