@@ -2,6 +2,8 @@
 
 [![🧪 Tested On](https://img.shields.io/badge/🧪%20Tested%20On-A20.6%20b9-blue.svg)](https://7daystodie.com/) [![📦 Automated Release](https://github.com/jonathan-robertson/zombie-bag-drop-fix/actions/workflows/release.yml/badge.svg)](https://github.com/jonathan-robertson/zombie-bag-drop-fix/actions/workflows/release.yml)
 
+![bag drop fix social image](https://github.com/jonathan-robertson/zombie-bag-drop-fix/raw/media/zombie-bag-drop-fix-social-image.jpg)
+
 - [Zombie Bag Drop Fix](#zombie-bag-drop-fix)
   - [Summary](#summary)
     - [Bug/Exploit Details](#bugexploit-details)
@@ -44,8 +46,8 @@ With *NEAR-ZERO* performance impact, I'm very happy with the results! 🎉
 
 Yes, of course! 😆 This was a major concern for me as well. Last thing I'd want is to make it so dead zombies only show up for the player who killed them, for example.
 
-Test | Before | Expected | Result
---- | --- | --- | ---
+Test | Before | After
+--- | --- | ---
 All players leave chunk containing dead zombies, then one player returns | dead zombies respawns and bag drop chance is attempted again | dead zombies are not respawned, bag drop chances are not attempted again, and zombie reference now no longer exists in chunk
 Multiple players are online and one player kills a zombie | the other player is able to see and interact with the zombie (loot from the zombie, if enabled, etc.) | same happens with mod installed, as expected
 Multiple players are online and one player kills a zombie and does not leave area. Other player from outside of area approaches | dead zombie renders in for second player and ragdoll effect plays for that player, but bag drop attempt is not triggered | same happens with mod installed, as expected
@@ -61,7 +63,10 @@ params | description
 :---: | ---
 N/A | enable/disable debug logging for this mod
 
-> ℹ️ You can always search for this command or any command by running `help * <partial or complete command name>` and get details about this (or any) command and its options by running `help <command>`.
+> ℹ️ You can always search for this command or any command by running:
+>
+> - `help * <partial or complete command name>`
+> - or get details about this (or any) command and its options by running `help <command>`
 
 ## Compatibility
 
