@@ -24,7 +24,7 @@ This can happen in any of the following scenarios so long as a dead zombie is pr
 
 ## Thoughts for The Fun Pimps on How This Might Be Resolved in Source
 
-Unlike the `zombie-bag-drop-fix` modlet I created, I'd assume you want to continue supporting the reload of dead zombie as 7DTD currently does. With this in mind, here is a suggested solution for doing so with (hopefull) the smallest, simplest solution possible... But I wouldn't be surprised if The Fun Pimps can come up with an ever better solution.
+Unlike the `zombie-bag-drop-fix` modlet I created, I'd assume you want to continue supporting the reload of dead zombie as 7DTD currently does. With this in mind, here is a suggested solution for doing so with (hopefully) the smallest, simplest solution possible... But I wouldn't be surprised if The Fun Pimps can come up with an ever better solution.
 
 1. I suspect that adding a new boolean field to `EntityAlive` (perhaps named `wasAlreadyKilled`) may help... and this be transient; temporary and without the need to save to any file.
 2. This field could be left alone throughout the typical code flow, but when the entity is created from an entity recreated from EntityCreationData, a check against `EntityCreationData.deathTime` could be performed.
