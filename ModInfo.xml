@@ -1,0 +1,9 @@
+<xml>
+    <ModInfo>
+        <Name value="Zombie Bag Drop Fix" />
+        <Description value="Fix a vanilla bug causing zombie bags to be attempted on chunk reload." />
+        <Author value="Jonathan Robertson (Kanaverum)" />
+        <Version value="1.0.0" />
+        <Website value="https://github.com/jonathan-robertson/zombie-bag-drop-fix" />
+    </ModInfo>
+</xml>
